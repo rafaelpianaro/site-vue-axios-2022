@@ -1,6 +1,6 @@
 <template>
   <header>
-      <nav>
+      <nav class="container">
             <a href=""><img id="logo" src="https://raw.githubusercontent.com/rafaelpianaro/mock-site-vue-axios-resources/main/assets/images/wdev.svg" alt="logo"></a>
             <img id="menu-button" src="https://raw.githubusercontent.com/rafaelpianaro/mock-site-vue-axios-resources/main/assets/images/menu.svg" alt="Abrir menu">
       </nav>
@@ -19,6 +19,14 @@ export default {
         background-color: var(--color-background-nav);
         width: 100%;
         height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
     }
 
     #logo {
