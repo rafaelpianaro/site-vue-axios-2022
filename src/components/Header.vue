@@ -3,6 +3,7 @@
       <nav class="container">
             <a href=""><img id="logo" src="https://raw.githubusercontent.com/rafaelpianaro/mock-site-vue-axios-resources/main/assets/images/wdev.svg" alt="logo"></a>
             <img id="menu-button" src="https://raw.githubusercontent.com/rafaelpianaro/mock-site-vue-axios-resources/main/assets/images/menu.svg" alt="Abrir menu">
+            <div id="menu-overlay"></div>
       </nav>
   </header>
 </template>
@@ -35,6 +36,16 @@ export default {
 
     #menu-button {
         width: 30px;
+    }
+
+    #menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 40%;
+        height: 100vh;
+        background-color: #000;
+        opacity: 0.8;
     }
 
 </style>
