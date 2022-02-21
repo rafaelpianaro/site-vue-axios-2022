@@ -1,11 +1,11 @@
 <template>
   <header>
       <nav class="container">
-            <a href="#"><img id="logo" src="https://raw.githubusercontent.com/rafaelpianaro/mock-site-vue-axios-resources/main/assets/images/wdev.svg" alt="logo"></a>
-            <img id="menu-button" src="https://raw.githubusercontent.com/rafaelpianaro/mock-site-vue-axios-resources/main/assets/images/menu.svg" alt="Abrir menu">
-            <div id="menu-overlay" v-show="menuActive"></div>
+            <a href="#"><img id="logo" alt="logo" src="https://raw.githubusercontent.com/rafaelpianaro/mock-site-vue-axios-resources/main/assets/images/wdev.svg" ></a>
+            <img @click="openMenu" id="menu-button" alt="Abrir menu" src="https://raw.githubusercontent.com/rafaelpianaro/mock-site-vue-axios-resources/main/assets/images/menu.svg" >
+            <div @click="closeMenu" id="menu-overlay" v-show="menuActive"></div>
             <div id="menu-items" :class="{active:menuActive}">
-                <img id="menu-logo" src="https://raw.githubusercontent.com/rafaelpianaro/mock-site-vue-axios-resources/main/assets/images/wdev.svg" alt="logo">
+                <img id="menu-logo" alt="logo" src="https://raw.githubusercontent.com/rafaelpianaro/mock-site-vue-axios-resources/main/assets/images/wdev.svg" >
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/videos">Vídeos</a></li>
@@ -24,6 +24,14 @@ export default {
         return {
             menuActive: false
         }
+    },
+    methods: {
+        openMenu() {
+            this.menuActive = true
+        },
+        closeMenu() {
+            this.menuActive = false
+        },
     }
 }
 </script>
