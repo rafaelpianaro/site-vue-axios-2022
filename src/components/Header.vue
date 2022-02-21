@@ -3,8 +3,8 @@
       <nav class="container">
             <a href="#"><img id="logo" src="https://raw.githubusercontent.com/rafaelpianaro/mock-site-vue-axios-resources/main/assets/images/wdev.svg" alt="logo"></a>
             <img id="menu-button" src="https://raw.githubusercontent.com/rafaelpianaro/mock-site-vue-axios-resources/main/assets/images/menu.svg" alt="Abrir menu">
-            <div id="menu-overlay"></div>
-            <div id="menu-items">
+            <div id="menu-overlay" v-show="menuActive"></div>
+            <div id="menu-items" :class="{active:menuActive}">
                 <img id="menu-logo" src="https://raw.githubusercontent.com/rafaelpianaro/mock-site-vue-axios-resources/main/assets/images/wdev.svg" alt="logo">
                 <ul>
                     <li><a href="/">Home</a></li>
@@ -19,7 +19,12 @@
 
 <script>
 export default {
-    name:'Header'
+    name:'Header',
+    data() {
+        return {
+            menuActive: false
+        }
+    }
 }
 </script>
 
@@ -70,10 +75,15 @@ export default {
         background-color: var(--color-background-nav);
         width: 60%;
         height: 100vh;
-        display: flex;
+        /* display: flex; */
+        display: none;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+    }
+
+    #menu-items.active {
+        display: flex;
     }
 
     ul {
