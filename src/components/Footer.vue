@@ -5,8 +5,15 @@
 </template>
 
 <script>
+import api from '@/services/api.js'
+
 export default {
-    name: 'Footer'
+    name: 'Footer',
+    mounted() {
+        api.get('/social-links.json').then(response => {
+            console.log(response.data)
+        })
+    }
 }
 </script>
 
