@@ -2,13 +2,15 @@
   <main>
       <section class="container">
           <h1>Vídeos</h1>
-          <section class="videos" v-for="(video, index) in videos" :key="index">
-              <a href="video.link" class="vide">
-                  <img :src="video.thumb" :alt="video.title">
-                  <div class="videos-title">
-                      {{ video.title }}
-                  </div>
-              </a>
+          <section class="videos">
+              <div class="video" v-for="(video, index) in videos" :key="index">
+                <a href="video.link">
+                    <img :src="video.thumb" :alt="video.title">
+                    <div class="video-title">
+                        {{ video.title }}
+                    </div>
+                </a>
+              </div>
           </section>
       </section>
   </main>
@@ -35,5 +37,19 @@ export default {
 <style scoped>
  main {
      align-items: center;
+ }
+
+ .videos {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }
+
+ .video {
+     width: 80%;
+ }
+ 
+ .video img {
+     width: 100%;
  }
 </style>
