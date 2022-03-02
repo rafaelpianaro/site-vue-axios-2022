@@ -1,16 +1,16 @@
 <template>
   <header>
       <nav class="container">
-            <a href="#"><img id="logo" alt="logo" src="https://raw.githubusercontent.com/rafaelpianaro/mock-site-vue-axios-resources/main/assets/images/wdev.svg" ></a>
+            <router-link to="#"><img id="logo" alt="logo" src="https://raw.githubusercontent.com/rafaelpianaro/mock-site-vue-axios-resources/main/assets/images/wdev.svg" ></router-link>
             <img @click="openMenu" id="menu-button" alt="Abrir menu" src="https://raw.githubusercontent.com/rafaelpianaro/mock-site-vue-axios-resources/main/assets/images/menu.svg" >
             <div @click="closeMenu" id="menu-overlay" v-show="menuActive"></div>
             <div id="menu-items" :class="{active:menuActive}">
                 <img id="menu-logo" alt="logo" src="https://raw.githubusercontent.com/rafaelpianaro/mock-site-vue-axios-resources/main/assets/images/wdev.svg" >
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/videos">Vídeos</a></li>
-                    <li><a href="/sobre">Sobre</a></li>
-                    <li><a href="/contato">Contato</a></li>
+                    <li @click="closeMenu"><router-link to="/">Home</router-link></li>
+                    <li @click="closeMenu"><router-link to="/videos">Vídeos</router-link></li>
+                    <li @click="closeMenu"><router-link to="/sobre">Sobre</router-link></li>
+                    <li @click="closeMenu"><router-link to="/contato">Contato</router-link></li>
                 </ul>
             </div>
       </nav>
